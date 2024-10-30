@@ -1,6 +1,6 @@
 ﻿namespace CodenamesWeb.Enums
 {
-    public enum ButtonColor
+    public enum ColorStyle
     {
         White,
         Blue,

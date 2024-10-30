@@ -1,4 +1,5 @@
 ﻿@using CodenamesWeb.Enums
+@inherits ColoredComponent
 <button class="@Style position-relative word-btn-onclick d-flex justify-content-center align-items-center ibm-plex-mono-semibold @colorStyle word-btn" @onclick="ChangeColor">
     @Text
     <div class="word-button-icons">
@@ -18,26 +19,9 @@
     [Parameter]
     public string Style { get; set; } = string.Empty;
 
-    [Parameter]
-    public ButtonColor Color { get; set; } = ButtonColor.White;
-
-    private string colorStyle { 
-        get {
-            switch(Color)
-            {
-                case ButtonColor.Red: return "red-word-btn";
-                case ButtonColor.Blue: return "blue-word-btn";
-                case ButtonColor.Yellow: return "yellow-word-btn";
-                case ButtonColor.Green: return "green-word-btn";
-                case ButtonColor.Dark: return "dark-word-btn";
-                default:return "white-word-btn";
-            }
-        }
-    }
-
     private void ChangeColor()
     {
-        Color = Color != ButtonColor.Dark ? Color + 1 : 0;
+        Color = Color != ColorStyle.Dark ? Color + 1 : 0;
     }
 
 }

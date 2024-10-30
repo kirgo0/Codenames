@@ -1,0 +1,28 @@
+﻿@inherits ColoredComponent
+
+<div class="team-block-layout">
+    <div class="team-circle @colorStyle ibm-plex-mono-semibold">
+        @WordsCount
+    </div>
+    @if(ShowUserList)
+    {
+        <div class="user-list ibm-plex-mono-regular">
+            @foreach(var userName in UserNames)
+            {
+                <div class="user-name-field">
+                    <GhostIcon Size="13px" Color="#E8E8E8"></GhostIcon> @userName
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int WordsCount { get; set; } = 9;
+
+    public List<string> UserNames { get; set; } = new(new [] {"kirgo", "solify", "alinka", "sizon"});
+
+    [Parameter]
+    public bool ShowUserList { get; set; } = false;
+}

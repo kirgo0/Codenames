@@ -2,10 +2,16 @@
     --word-btn-onclick-scale: 1.02;
 }
 
+body {
+    background-color: #595959;
+}
+
 .game-field-layout {
     display: grid;
     grid-template-columns: 2.1fr 1fr;
     grid-template-rows: 1fr 3.7fr;
+    column-gap: 3vw;
+    row-gap: 3vh;
     width: 100%;
     height: 100%;
 }
@@ -14,6 +20,12 @@
     width: 100%;
     height: 95vh;
     padding: 3vh 5vw;
+}
+
+.ibm-plex-mono-regular {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .ibm-plex-mono-semibold {
@@ -30,32 +42,32 @@
     row-gap: 10px;
 }
 
-.white-word-btn {
+.white-bg {
     background-color: #E8E8E8;
     color: #3F3F3F;
 }
 
-.blue-word-btn {
+.blue-bg {
     background-color: #81A2F8;
     color: #3F3F3F;
 }
 
-.green-word-btn {
+.green-bg {
     background-color: #82CA7C;
     color: #3F3F3F;
 }
 
-.red-word-btn {
+.red-bg {
     background-color: #F97272;
     color: #3F3F3F;
 }
 
-.yellow-word-btn {
+.yellow-bg {
     background-color: #FDE284;
     color: #3F3F3F;
 }
 
-.dark-word-btn {
+.dark-bg {
     background-color: #3F3F3F;
     color: #E8E8E8;
 }
@@ -113,6 +125,37 @@
     animation: none;
 }
 
-body {
-    text-align: center;
+.teams-field-layout {
+    display: flex;
+    gap: 1.4vw;
+    padding: 1vh 0px;
+}
+
+.team-block-layout {
+    display: flex;
+    gap: 1vw;
+}
+
+.team-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    height: 100%;
+    border-radius: 100%;
+    font-size: 9vmin;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    padding: 5px 0;
+}
+
+.user-name-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
