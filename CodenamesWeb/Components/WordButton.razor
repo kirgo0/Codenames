@@ -1,16 +1,14 @@
 ﻿@using CodenamesWeb.Enums
-<div class="@Style position-relative">
-    <div class="d-flex justify-content-center align-items-center ibm-plex-mono-semibold @colorStyle word-btn">
-        @Text
-        <div class="word-button-icons">
-            <GhostIcon></GhostIcon>
-            <GhostIcon></GhostIcon>
-            <GhostIcon></GhostIcon>
-            <GhostIcon></GhostIcon>
-            <GhostIcon></GhostIcon>
-        </div>
+<button class="@Style position-relative word-btn-onclick d-flex justify-content-center align-items-center ibm-plex-mono-semibold @colorStyle word-btn" @onclick="ChangeColor">
+    @Text
+    <div class="word-button-icons">
+        <GhostIcon></GhostIcon>
+        <GhostIcon></GhostIcon>
+        <GhostIcon></GhostIcon>
+        <GhostIcon></GhostIcon>
+        <GhostIcon></GhostIcon>
     </div>
-</div>
+</button>
 
 
 @code {
@@ -35,6 +33,11 @@
                 default:return "white-word-btn";
             }
         }
+    }
+
+    private void ChangeColor()
+    {
+        Color = Color != ButtonColor.Dark ? Color + 1 : 0;
     }
 
 }
