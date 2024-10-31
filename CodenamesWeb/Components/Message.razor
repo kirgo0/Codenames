@@ -1,0 +1,52 @@
+﻿<div class="message-block-layout">
+    <div class="message-pin-layout">
+        <div class="message-pin @bgStyle"></div>
+    </div>
+    <div class="ibm-plex-mono-regular">
+        <div class="message-username @colorStyle">
+            @Item.From.UserName
+        </div>
+        <div class="message-text">
+            @Item.Text
+        </div>
+    </div>
+    <div class="message-count ibm-plex-mono-bold">
+        @Item.Count
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public MessageDto Item { get; set; }
+
+    public string colorStyle { get
+        {
+            switch(Item.Color)
+            {
+                case ColorStyle.Red: return "red-text";
+                case ColorStyle.Blue: return "blue-text";
+                case ColorStyle.Yellow: return "yellow-text";
+                case ColorStyle.Green: return "green-text";
+                case ColorStyle.Dark: return "dark-text";
+                default: return "white-text";
+            }
+        }
+    }
+
+    public string bgStyle
+    {
+        get
+        {
+            switch (Item.Color)
+            {
+                case ColorStyle.Red: return "red-bg";
+                case ColorStyle.Blue: return "blue-bg";
+                case ColorStyle.Yellow: return "yellow-bg";
+                case ColorStyle.Green: return "green-bg";
+                case ColorStyle.Dark: return "dark-bg";
+                default: return "white-bg";
+            }
+        }
+    }
+}

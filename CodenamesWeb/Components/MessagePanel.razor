@@ -1,0 +1,49 @@
+﻿<div class="messages-field-layout">
+    <div class="messages-panel messages-up-direction">
+        <Message Item="messages[0]"></Message>
+        <Message Item="messages[1]"></Message>
+        <Message Item="messages[2]"></Message>
+    </div>
+    <hr class="messages-panel-hr"/>
+    <div class="messages-panel">
+        <Message Item="messages[3]"></Message>
+        <Message Item="messages[3]"></Message>
+        <Message Item="messages[3]"></Message>
+        <Message Item="messages[3]"></Message>
+    </div>
+</div>
+@code {
+    List<MessageDto> messages = new();
+
+    protected override void OnInitialized()
+    {
+        messages.Add(new MessageDto()
+        {
+            Text = "якесь_слово",
+            Count = 2,
+            Color = ColorStyle.Green,
+            From = new UserDto("chokopie")
+            });
+        messages.Add(new MessageDto()
+            {
+                Text = "якесь_слово",
+                Count = 3,
+                Color = ColorStyle.Blue,
+                From = new UserDto("solify")
+            });
+        messages.Add(new MessageDto()
+            {
+                Text = "якесь_слово",
+                Count = 1,
+                Color = ColorStyle.Green,
+                From = new UserDto("chokopie")
+            });
+        messages.Add(new MessageDto()
+            {
+                Text = "якесь_слово",
+                Count = 2,
+                Color = ColorStyle.Red,
+                From = new UserDto("kirgo")
+            });
+    }
+}

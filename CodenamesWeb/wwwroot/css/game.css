@@ -6,10 +6,11 @@
     --green-color: #82CA7C;
     --yellow-color: #FDE284;
     --dark-color: #3F3F3F;
+    --bg-color: #595959;
 }
 
 body {
-    background-color: #595959;
+    background-color: var(--bg-color);
 }
 
 .game-field-layout {
@@ -40,6 +41,12 @@ body {
     font-style: normal;
 }
 
+.ibm-plex-mono-bold {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 .game-field-25 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -52,31 +59,51 @@ body {
     background-color: var(--white-color);
     color: #3F3F3F;
 }
+.white-text {
+    color: var(--white-color);
+}
 
 .blue-bg {
     background-color: var(--blue-color);
     color: var(--dark-color);
+}
+.blue-text {
+    color: var(--blue-color);
 }
 
 .green-bg {
     background-color: var(--green-color);
     color: var(--dark-color);
 }
+.green-text{
+    color: var(--green-color);
+}
 
 .red-bg {
     background-color: var(--red-color);
     color: var(--dark-color);
+}
+.red-text{
+    color: var(--red-color);
 }
 
 .yellow-bg {
     background-color: var(--yellow-color);
     color: var(--dark-color);
 }
+.yellow-text {
+    color: var(--yellow-color);
+}
 
 .dark-bg {
     background-color: var(--dark-color);
     color: var(--white-color);
 }
+.dark-text {
+    color: var(--dark-color);
+}
+
+
 
 .word-btn {
     border: none;
@@ -168,23 +195,24 @@ body {
 }
 
 .timer-layout {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    margin-left: auto;
     justify-content: end;
     align-items: end;
 }
 
 .timer-action-text {
-    font-size: 1.8vmin;
+    font-size: 1vw;
     text-decoration: underline;
     color: var(--white-color);
 }
 
 .timer-time-text {
-    font-size: 8vmin;
+    font-size: 4vw;
     color: var(--white-color);
     line-height: 8vmin;
+    word-wrap: anywhere;
 }
 
 .menu-field-layout {
@@ -203,4 +231,86 @@ body {
 .action-button {
     background-color: transparent;
     border: none;
+}
+
+.messages-field-layout {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(217, 217, 217, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.messages-panel {
+    padding: 0px 0.5vw 0.5vh 1vw;
+    margin: 1vh 0.5vw 0.5vh 0px;
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    gap: 1.2vmin;
+    overflow-y: scroll;
+}
+
+.messages-up-direction {
+    flex-direction: column-reverse;
+}
+
+.messages-panel-hr {
+    border: 2px solid var(--white-color);
+    border-radius: 7px 7px 7px 7px;
+    margin: 0px;
+}
+
+.message-block-layout {
+    display: flex;
+    gap: 1vw;
+    background-color: rgba(89, 89, 89, 0.5);
+    border-radius: 10px;
+    padding: 1vh 1vw;
+}
+
+.message-pin-layout {
+    padding: 5px;
+}
+
+.message-pin {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+.message-username {
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 0.8vw;
+}
+
+.message-text {
+    color: var(--white-color);
+    font-style: italic;
+}
+
+.message-count {
+    font-size: 2vw;
+    margin-left: auto;
+    color: var(--white-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--bg-color);
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
 }
