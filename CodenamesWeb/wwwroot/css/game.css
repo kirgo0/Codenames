@@ -185,3 +185,15 @@ body {
     color: var(--white-color);
     line-height: 8vmin;
 }
+
+.menu-field-layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-menu-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2vh 0px;
+}
