@@ -150,6 +150,7 @@ body {
     height: 100%;
     border-radius: 100%;
     font-size: 9vmin;
+    user-select: none;
 }
 
 .user-list {
@@ -189,6 +190,7 @@ body {
 .menu-field-layout {
     display: flex;
     justify-content: space-between;
+    padding: 1vh 0px;
 }
 
 .user-menu-layout {
@@ -196,4 +198,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding: 2vh 0px;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
 }
