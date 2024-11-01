@@ -1,48 +1,24 @@
 ﻿@page "/"
+@inject NavigationManager _navManager
 
 <PageTitle>Home</PageTitle>
 
-<div class="game-field-wrapper">
-    <div class="game-field-layout">
-        <div class="teams-field-layout">
-            <TeamCricle Color="ColorStyle.Blue"></TeamCricle>
-            <TeamCricle ShowUserList="true" Color="ColorStyle.Green"></TeamCricle>
-            <Timer></Timer>
-        </div>
-        <div class="menu-field-layout">
-            <TeamCricle ShowUserList="true" Color="ColorStyle.Red"></TeamCricle>
-            <UserMenu></UserMenu>
-        </div>
+<button type="button" @onclick="GoToGameRoom">
+    Room
+</button>
 
-        <div class="game-field-25">
-            <WordButton Color="ColorStyle.Red"></WordButton>
-            <WordButton Color="ColorStyle.Blue"></WordButton>
-            <WordButton Color="ColorStyle.Yellow"></WordButton>
-            <WordButton Color="ColorStyle.Dark"></WordButton>
-            <WordButton Color="ColorStyle.Green"></WordButton>
-            <WordButton Text="word"></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-            <WordButton></WordButton>
-        </div>
-        <MessagePanel></MessagePanel>
-    </div>
-</div>
+<button type="button" @onclick="GoToGameLobby">
+    Lobby
+</button>
 
+@code {
+    void GoToGameRoom()
+    {
+        _navManager.NavigateTo("/gameRoom");
+    }
 
+    void GoToGameLobby()
+    {
+        _navManager.NavigateTo("/gameLobby");
+    }
+}

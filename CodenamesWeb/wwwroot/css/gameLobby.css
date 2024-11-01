@@ -1,0 +1,31 @@
+﻿.team-cards-layout {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2vw;
+    padding: 3vh 2vw;
+}
+
+.team-card-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    padding: 10vh 1.5vw;
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border-radius: 2px;
+}
+
+.join-team-text {
+    font-size: 2vw;
+    color: var(--white-color);
+    text-align: center;
+}

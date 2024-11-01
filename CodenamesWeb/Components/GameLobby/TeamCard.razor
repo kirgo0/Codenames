@@ -1,0 +1,51 @@
+﻿<div class="team-card-layout">
+    @if (ShowJoinText)
+    {
+        <div class="join-team-text ibm-plex-mono-semibold">
+            Приєднатись
+        </div>
+    }
+    <div class="team-card"
+         @onmouseenter="() => ChangeJoinTextVisibility(true)"
+         @onmouseleave="() => ChangeJoinTextVisibility(false)">
+        @foreach (var user in Users)
+        {
+            <div class="user-name-field">
+                <GhostIcon Size="13px" Color="ColorStyle.White"></GhostIcon> @user.UserName
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<UserDto> Users { get; set; } = new();
+
+    [Parameter]
+    public int MaxRoomCount { get; set; } = 4;
+
+    private bool ShowJoinText { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+        Users.Add(
+            new UserDto("Kirgo")
+        );
+        Users.Add(
+            new UserDto("szn")
+        );
+        Users.Add(
+            new UserDto("alinka")
+        );
+        Users.Add(
+            new UserDto("oleg")
+        );
+        base.OnInitialized();
+    }
+
+    void ChangeJoinTextVisibility(bool showText)
+    {
+        ShowJoinText = showText;
+        StateHasChanged();
+    }
+}
