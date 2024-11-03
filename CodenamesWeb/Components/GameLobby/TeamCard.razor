@@ -5,7 +5,8 @@
             Приєднатись
         </div>
     }
-    <div class="team-card"
+    <div style="box-shadow: 0px 0px 5px 3.5px var(@GetColorStyle(Color));"
+        class="team-card red-light"
          @onmouseenter="() => ChangeJoinTextVisibility(true)"
          @onmouseleave="() => ChangeJoinTextVisibility(false)">
         @foreach (var user in Users)
@@ -47,5 +48,21 @@
     {
         ShowJoinText = showText;
         StateHasChanged();
+    }
+
+    [Parameter]
+    public ColorStyle Color { get; set; } = ColorStyle.Red;
+
+    protected string GetColorStyle(ColorStyle color)
+    {
+        switch (color)
+        {
+            case ColorStyle.Red: return "--red-color";
+            case ColorStyle.Blue: return "--blue-color";
+            case ColorStyle.Yellow: return "--yellow-color";
+            case ColorStyle.Green: return "--green-color";
+            case ColorStyle.Dark: return "--dark-color";
+            default: return "--white-color";
+        }
     }
 }
