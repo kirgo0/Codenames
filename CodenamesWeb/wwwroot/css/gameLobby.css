@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     gap: 4vh;
-    padding: 10vh 1.5vw;
+    padding: 10vh 1vw;
     color: var(--white-color);
     background-color: var(--dark-color);
     border-radius: 2px;
@@ -28,4 +28,69 @@
     font-size: 2vw;
     color: var(--white-color);
     text-align: center;
+}
+
+.configuration-field-layout {
+    background-color: var(--dark-color);
+    border-radius: 20px;
+}
+
+.lobby-blocks-layout {
+    display: grid;
+    grid-template-columns: 2.15fr 1.3fr;
+    gap: 2vw;
+    height: 40vh;
+    padding: 5vh 10vw;
+}
+
+.lobby-block-header {
+    border-radius: 20px 20px 0px 0px;
+    height: 20%;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.5);
+}
+
+.lobby-configuration-block {
+    display: flex;
+    padding: 1.5vh 1vw;
+    justify-content: space-between;
+}
+
+.game-settings {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 8vw;
+    row-gap: 3vh;
+}
+
+.game-setting {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-name-text {
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 1.6vw;
+}
+
+.setting-value-text {
+    color: var(--yellow-color);
+    font-style: italic;
+    font-weight: 200;
+    font-size: 0.8vw;
+}
+
+.gamemode-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    height: 100%;
+    border-radius: 100%;
+    font-size: 9vmin;
+    user-select: none;
 }

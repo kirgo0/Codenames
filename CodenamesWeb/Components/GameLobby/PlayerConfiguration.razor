@@ -1,0 +1,25 @@
+﻿<div class="configuration-field-layout">
+    <div class="lobby-block-header" style="background-color: var(@GetColorStyle())"></div>
+    <div class="player-configuration-block">
+
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public ColorStyle Color { get; set; } = ColorStyle.Red;
+
+    protected string GetColorStyle()
+    {
+        switch (Color)
+        {
+            case ColorStyle.Red: return "--red-color";
+            case ColorStyle.Blue: return "--blue-color";
+            case ColorStyle.Yellow: return "--yellow-color";
+            case ColorStyle.Green: return "--green-color";
+            case ColorStyle.Dark: return "--dark-color";
+            default: return "--white-color";
+        }
+    }
+}
