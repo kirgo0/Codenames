@@ -13,8 +13,36 @@
         <Message Item="messages[3]"></Message>
         <Message Item="messages[3]"></Message>
     </div>
+    @if(IsCaptian)
+    {
+        <div class="message-input-layout">
+            <div class="message-input-field">
+                <input class="message-text-input ibm-plex-mono-regular" type="text"/>
+                <div class="message-input-separator">
+
+                </div>
+                <input class="message-number-input ibm-plex-mono-bold" type="number"/>
+            </div>
+            <button class="message-input-button ibm-plex-mono-bold" style="background-color: var(@GetColorStyle(SendButtonColor))">Відправити</button>
+        </div>
+    }   
 </div>
 @code {
+    [Parameter]
+    public ColorStyle SendButtonColor { get; set; } = ColorStyle.Red;
+
+    protected string GetColorStyle(ColorStyle Color)
+    {
+        switch (Color)
+        {
+            case ColorStyle.Red: return "--red-color";
+            case ColorStyle.Blue: return "--blue-color";
+            case ColorStyle.Yellow: return "--yellow-color";
+            case ColorStyle.Green: return "--green-color";
+            case ColorStyle.Dark: return "--dark-color";
+            default: return "--white-color";
+        }
+    }
     List<MessageDto> messages = new();
 
     protected override void OnInitialized()
@@ -48,4 +76,6 @@
                 From = new UserDto("kirgo")
             });
     }
+
+    public bool IsCaptian { get; set; } = true;
 }

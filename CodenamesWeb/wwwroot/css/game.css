@@ -59,6 +59,7 @@ body {
     background-color: var(--white-color);
     color: #3F3F3F;
 }
+
 .white-text {
     color: var(--white-color);
 }
@@ -67,6 +68,7 @@ body {
     background-color: var(--blue-color);
     color: var(--dark-color);
 }
+
 .blue-text {
     color: var(--blue-color);
 }
@@ -75,7 +77,8 @@ body {
     background-color: var(--green-color);
     color: var(--dark-color);
 }
-.green-text{
+
+.green-text {
     color: var(--green-color);
 }
 
@@ -83,7 +86,8 @@ body {
     background-color: var(--red-color);
     color: var(--dark-color);
 }
-.red-text{
+
+.red-text {
     color: var(--red-color);
 }
 
@@ -91,6 +95,7 @@ body {
     background-color: var(--yellow-color);
     color: var(--dark-color);
 }
+
 .yellow-text {
     color: var(--yellow-color);
 }
@@ -99,6 +104,7 @@ body {
     background-color: var(--dark-color);
     color: var(--white-color);
 }
+
 .dark-text {
     color: var(--dark-color);
 }
@@ -148,15 +154,15 @@ body {
     transform: scale(1, 1);
 }
 
-.word-btn-onclick:focus {
-    -webkit-animation: beat 0.3s ease-in-out backwards;
-    animation: beat 0.3s ease-in-out backwards;
-}
+    .word-btn-onclick:focus {
+        -webkit-animation: beat 0.3s ease-in-out backwards;
+        animation: beat 0.3s ease-in-out backwards;
+    }
 
-.word-btn-onclick:active {
-    -webkit-animation: none;
-    animation: none;
-}
+    .word-btn-onclick:active {
+        -webkit-animation: none;
+        animation: none;
+    }
 
 .teams-field-layout {
     display: flex;
@@ -257,6 +263,7 @@ body {
 
 .messages-panel-hr {
     border: 2px solid var(--white-color);
+    color: var(--white-color);
     border-radius: 7px 7px 7px 7px;
     margin: 0px;
 }
@@ -312,5 +319,65 @@ body {
 }
 
     /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb:hover {
+    }
+
+.message-input-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 1vw 2vh 1vw;
+}
+
+.message-input-field, .message-text-input, .message-number-input, .message-input-button {
+    margin: 0px;
+    border: 0px;
+    outline: none;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.message-input-field {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vh 1vw;
+    background-color: rgba(217, 217, 217, 0.1);
+    border-radius: 10px 10px 0 0;
+}
+
+.message-input-separator {
+    background-color: var(--white-color);
+    width: 1px;
+    margin: 1px 0;
+}
+
+.message-text-input {
+    width: 75%;
+    padding: 1vh 0px;
+    font-style: italic;
+    color: var(--white-color);
+}
+
+.message-number-input {
+    width: 20%;
+    color: var(--white-color);
+    font-size: 2vw;
+    text-align: center;
+}
+
+.message-input-button {
+    border-radius: 0 0 10px 10px;
+    padding: 1vh 1vw;
+    color: var(--dark-color);
+    font-size: 1.3vw;
+}
+
+
+.message-number-input::-webkit-outer-spin-button,
+.message-number-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.message-number-input[type=number] {
+    -moz-appearance: textfield;
 }
