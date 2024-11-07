@@ -357,6 +357,10 @@ body {
     color: var(--white-color);
 }
 
+.message-text-input::placeholder {
+    color: var(--white-color);
+}
+
 .message-number-input {
     width: 20%;
     color: var(--white-color);
@@ -371,6 +375,10 @@ body {
     font-size: 1.3vw;
 }
 
+.message-input-button:disabled,
+.message-input-button[disabled]{
+    cursor: not-allowed;
+}
 
 .message-number-input::-webkit-outer-spin-button,
 .message-number-input::-webkit-inner-spin-button {

@@ -17,13 +17,18 @@
     {
         <div class="message-input-layout">
             <div class="message-input-field">
-                <input class="message-text-input ibm-plex-mono-regular" type="text"/>
+                <input 
+                    @bind:event="oninput"
+                    @bind="@MessageToSend.Text"
+                class="message-text-input ibm-plex-mono-regular" type="text" placeholder="слово"/>
                 <div class="message-input-separator">
 
                 </div>
-                <input class="message-number-input ibm-plex-mono-bold" type="number"/>
+                <input 
+                    @bind:event="oninput" 
+                    @bind="@MessageToSend.Count" class="message-number-input ibm-plex-mono-bold" type="number"/>
             </div>
-            <button class="message-input-button ibm-plex-mono-bold" style="background-color: var(@GetColorStyle(SendButtonColor))">Відправити</button>
+            <button disabled="@(!IsMessageValid)" class="message-input-button ibm-plex-mono-bold" style="background-color: var(@GetColorStyle(SendButtonColor))">Відправити</button>
         </div>
     }   
 </div>
@@ -31,8 +36,15 @@
     [Parameter]
     public ColorStyle SendButtonColor { get; set; } = ColorStyle.Red;
 
+    [Parameter]
+    public bool IsCaptian { get; set; } = true;
+
     protected string GetColorStyle(ColorStyle Color)
     {
+        if (!IsMessageValid)
+        {
+            return "--white-color";
+        }
         switch (Color)
         {
             case ColorStyle.Red: return "--red-color";
@@ -44,6 +56,20 @@
         }
     }
     List<MessageDto> messages = new();
+
+    public MessageDto MessageToSend { get; set; } = new();
+
+    public bool IsMessageValid { get {
+            if(MessageToSend is not null && MessageToSend.Count > 0 && !string.IsNullOrEmpty(MessageToSend.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 
     protected override void OnInitialized()
     {
@@ -77,5 +103,6 @@
             });
     }
 
-    public bool IsCaptian { get; set; } = true;
+
+
 }
