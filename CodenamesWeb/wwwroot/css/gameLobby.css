@@ -10,9 +10,11 @@
 .team-card-layout {
     display: flex;
     flex-direction: column;
+    gap: 2vh;
 }
 
 .team-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,10 +26,36 @@
     border-radius: 2px;
 }
 
+.team-card-light-layout {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.team-card-light-hover {
+    transition: opacity 0.2s ease-in;
+    opacity: 100;
+}
+
+.join-team-text-layout {
+    position: relative;
+}
+
 .join-team-text {
+    top: 0;
     font-size: 2vw;
     color: var(--white-color);
     text-align: center;
+    transform: translateY(7vh);
+    transition: transform 0.35s ease-out;
+}
+
+.join-team-text-hover {
+    transform: translateY(0px);
+    transition: transform 0.2s ease-in;
 }
 
 .configuration-field-layout {

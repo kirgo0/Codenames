@@ -1,16 +1,16 @@
 ﻿@inherits ColoredComponent
 
 <div class="team-card-layout">
-    @if (ShowJoinText)
-    {
-        <div class="join-team-text ibm-plex-mono-semibold">
+    <div class="join-team-text-layout">
+        <div class="join-team-text @(ShowJoinText ? "join-team-text-hover" : "") ibm-plex-mono-semibold">
             Приєднатись
         </div>
-    }
+    </div>
     <div style="box-shadow: 0px 0px 5px 3.5px @Resources.Color(Color);"
-        class="team-card red-light"
+        class="team-card"
          @onmouseenter="() => ChangeJoinTextVisibility(true)"
          @onmouseleave="() => ChangeJoinTextVisibility(false)">
+        <div style="background: linear-gradient(to bottom, @Resources.TransparentColor(Color, 0.6), @Resources.TransparentColor(Color, 0.1) 70%,@Resources.TransparentColor(Color, 0));" class="team-card-light-layout @(ShowJoinText ? "team-card-light-hover" : "")"></div>
         @foreach (var user in Users)
         {
             <div class="user-name-field">

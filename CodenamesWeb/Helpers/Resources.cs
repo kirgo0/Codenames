@@ -1,7 +1,5 @@
 ﻿using CodenamesWeb.Enums;
-using System.Drawing;
 using System.Globalization;
-using System.Text;
 
 namespace CodenamesWeb.Helpers
 {
@@ -35,6 +33,7 @@ namespace CodenamesWeb.Helpers
                 case ColorStyle.Green: return "--green-color";
                 case ColorStyle.Yellow: return "--yellow-color";
                 case ColorStyle.Dark: return "--dark-color";
+                case ColorStyle.CaptainYellow: return "--cap-yellow-color";
                 default: return "--white-color";
             }
         }
