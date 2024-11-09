@@ -1,9 +1,16 @@
-﻿<div class="gamemode-circle">
-    @TeamsCount
+﻿<div class="gamemode-circle-layout" @onclick="ChangeCount">
+    <div class="gamemode-circle gamemode-@TeamsCount-players ibm-plex-mono-bold">
+        @TeamsCount
+    </div>
 </div>
-
 @code {
     [Parameter]
-    public int TeamsCount { get; set; } = 2;
+    public int TeamsCount { get; set; } = 3;
 
+    public void ChangeCount ()
+    {
+        TeamsCount++;
+        if (TeamsCount > 4) TeamsCount = 2;
+        StateHasChanged();
+    }
 }

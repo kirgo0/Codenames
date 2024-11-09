@@ -60,7 +60,7 @@
 
 .configuration-field-layout {
     background-color: var(--dark-color);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .lobby-blocks-layout {
@@ -72,7 +72,7 @@
 }
 
 .lobby-block-header {
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     height: 20%;
     width: 100%;
     background-color: rgba(var(--block-bg-color-t), 0.5);
@@ -80,6 +80,7 @@
 
 .lobby-configuration-block {
     display: flex;
+    height: 80%;
     padding: 1.5vh 1vw;
     justify-content: space-between;
 }
@@ -112,6 +113,11 @@
     font-size: 0.8vw;
 }
 
+.gamemode-circle-layout {
+    display: flex;
+    padding: 1.5vh;
+}
+
 .gamemode-circle {
     display: flex;
     align-items: center;
@@ -119,6 +125,30 @@
     aspect-ratio: 1/1;
     height: 100%;
     border-radius: 100%;
+    color: var(--dark-color);
     font-size: 9vmin;
     user-select: none;
+    background-color: var(--blue-color);
+    opacity: 70%;
+}
+
+.gamemode-2-players {
+    background-image: conic-gradient(from 45deg,
+    var(--red-color) 0deg 180deg,
+    var(--blue-color) 180deg 360deg);
+}
+
+.gamemode-3-players {
+    background-image: conic-gradient(from -60deg, 
+    var(--blue-color) 0deg 120deg, 
+    var(--green-color) 120deg 240deg, 
+    var(--red-color) 240deg 360deg);
+}
+
+.gamemode-4-players {
+    background-image: conic-gradient(from -45deg,
+    var(--blue-color) 0deg 90deg, 
+    var(--green-color) 90deg 180deg, 
+    var(--yellow-color) 180deg 270deg,
+    var(--red-color) 270deg 360deg);
 }
