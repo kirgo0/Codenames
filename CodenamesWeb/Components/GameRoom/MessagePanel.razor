@@ -28,7 +28,7 @@
                     @bind:event="oninput" 
                     @bind="@MessageToSend.Count" class="message-number-input ibm-plex-mono-bold" type="number"/>
             </div>
-            <button disabled="@(!IsMessageValid)" class="message-input-button ibm-plex-mono-bold" style="background-color: var(@GetColorStyle(SendButtonColor))">Відправити</button>
+            <button disabled="@(!IsMessageValid)" class="message-input-button ibm-plex-mono-bold" style="background-color: @GetButtonColor()">Відправити</button>
         </div>
     }   
 </div>
@@ -39,20 +39,14 @@
     [Parameter]
     public bool IsCaptian { get; set; } = true;
 
-    protected string GetColorStyle(ColorStyle Color)
+    protected string GetButtonColor()
     {
         if (!IsMessageValid)
         {
-            return "--white-color";
-        }
-        switch (Color)
+            return Resources.TransparentColor(ColorStyle.White, 0.5);
+        } else
         {
-            case ColorStyle.Red: return "--red-color";
-            case ColorStyle.Blue: return "--blue-color";
-            case ColorStyle.Yellow: return "--yellow-color";
-            case ColorStyle.Green: return "--green-color";
-            case ColorStyle.Dark: return "--dark-color";
-            default: return "--white-color";
+            return Resources.Color(SendButtonColor);
         }
     }
     List<MessageDto> messages = new();

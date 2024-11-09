@@ -7,6 +7,15 @@
     --yellow-color: #FDE284;
     --dark-color: #3F3F3F;
     --bg-color: #595959;
+
+    --white-color-t: 232, 232, 232;
+    --red-color-t: 249, 114, 114;
+    --blue-color-t: 129, 162, 248;
+    --green-color-t: 130, 202, 124;
+    --yellow-color-t: 253, 226, 132;
+    --dark-color-t: 63, 63, 63;
+    --bg-color-t: 89, 89, 89;
+    --block-bg-color-t: 217, 217, 217;
 }
 
 body {
@@ -54,62 +63,6 @@ body {
     column-gap: 10px;
     row-gap: 10px;
 }
-
-.white-bg {
-    background-color: var(--white-color);
-    color: #3F3F3F;
-}
-
-.white-text {
-    color: var(--white-color);
-}
-
-.blue-bg {
-    background-color: var(--blue-color);
-    color: var(--dark-color);
-}
-
-.blue-text {
-    color: var(--blue-color);
-}
-
-.green-bg {
-    background-color: var(--green-color);
-    color: var(--dark-color);
-}
-
-.green-text {
-    color: var(--green-color);
-}
-
-.red-bg {
-    background-color: var(--red-color);
-    color: var(--dark-color);
-}
-
-.red-text {
-    color: var(--red-color);
-}
-
-.yellow-bg {
-    background-color: var(--yellow-color);
-    color: var(--dark-color);
-}
-
-.yellow-text {
-    color: var(--yellow-color);
-}
-
-.dark-bg {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-}
-
-.dark-text {
-    color: var(--dark-color);
-}
-
-
 
 .word-btn {
     border: none;
@@ -242,7 +195,7 @@ body {
 .messages-field-layout {
     display: flex;
     flex-direction: column;
-    background-color: rgba(217, 217, 217, 0.2);
+    background-color: rgba(var(--block-bg-color-t), 0.2);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -271,7 +224,7 @@ body {
 .message-block-layout {
     display: flex;
     gap: 1vw;
-    background-color: rgba(89, 89, 89, 0.5);
+    background-color: rgba(var(--bg-color-t), 0.5);
     border-radius: 10px;
     padding: 1vh 1vw;
 }
@@ -340,7 +293,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0.5vh 1vw;
-    background-color: rgba(217, 217, 217, 0.1);
+    background-color: rgba(var(--block-bg-color-t), 0.1);
     border-radius: 10px 10px 0 0;
 }
 

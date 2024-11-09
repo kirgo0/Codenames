@@ -2,25 +2,4 @@
 
     [Parameter]
     public ColorStyle Color { get; set; } = ColorStyle.White;
-
-    protected string colorStyle
-    {
-        get
-        {
-            return GetColorStyle(Color);
-        }
-    }
-
-    protected string GetColorStyle(ColorStyle color)
-    {
-        switch (color)
-        {
-            case ColorStyle.Red: return "red-bg";
-            case ColorStyle.Blue: return "blue-bg";
-            case ColorStyle.Yellow: return "yellow-bg";
-            case ColorStyle.Green: return "green-bg";
-            case ColorStyle.Dark: return "dark-bg";
-            default: return "white-bg";
-        }
-    }
 }

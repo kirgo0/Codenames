@@ -47,7 +47,7 @@
     border-radius: 20px 20px 0px 0px;
     height: 20%;
     width: 100%;
-    background-color: rgba(217, 217, 217, 0.5);
+    background-color: rgba(var(--block-bg-color-t), 0.5);
 }
 
 .lobby-configuration-block {

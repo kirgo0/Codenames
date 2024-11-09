@@ -1,6 +1,6 @@
 ﻿@using CodenamesWeb.Enums
 @inherits ColoredComponent
-<button class="@Style position-relative word-btn-onclick d-flex justify-content-center align-items-center ibm-plex-mono-semibold @colorStyle word-btn" @onclick="ChangeColor">
+<button class="@Style position-relative word-btn-onclick d-flex justify-content-center align-items-center ibm-plex-mono-semibold word-btn" @onclick="ChangeColor" style="background-color: @Resources.Color(Color); color: @Resources.TextColor(Color)">
     @Text
     <div class="word-button-icons">
         <GhostIcon Color="ColorStyle.Dark"></GhostIcon>

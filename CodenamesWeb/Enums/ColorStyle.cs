@@ -7,6 +7,7 @@
         Green,
         Red,
         Yellow,
-        Dark
+        Dark,
+        CaptainYellow
     }
 }

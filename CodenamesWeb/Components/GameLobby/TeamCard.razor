@@ -1,11 +1,13 @@
-﻿<div class="team-card-layout">
+﻿@inherits ColoredComponent
+
+<div class="team-card-layout">
     @if (ShowJoinText)
     {
         <div class="join-team-text ibm-plex-mono-semibold">
             Приєднатись
         </div>
     }
-    <div style="box-shadow: 0px 0px 5px 3.5px var(@GetColorStyle(Color));"
+    <div style="box-shadow: 0px 0px 5px 3.5px @Resources.Color(Color);"
         class="team-card red-light"
          @onmouseenter="() => ChangeJoinTextVisibility(true)"
          @onmouseleave="() => ChangeJoinTextVisibility(false)">
@@ -50,19 +52,4 @@
         StateHasChanged();
     }
 
-    [Parameter]
-    public ColorStyle Color { get; set; } = ColorStyle.Red;
-
-    protected string GetColorStyle(ColorStyle color)
-    {
-        switch (color)
-        {
-            case ColorStyle.Red: return "--red-color";
-            case ColorStyle.Blue: return "--blue-color";
-            case ColorStyle.Yellow: return "--yellow-color";
-            case ColorStyle.Green: return "--green-color";
-            case ColorStyle.Dark: return "--dark-color";
-            default: return "--white-color";
-        }
-    }
 }
