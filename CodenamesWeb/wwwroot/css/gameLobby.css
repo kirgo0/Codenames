@@ -19,11 +19,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     gap: 4vh;
     padding: 10vh 1vw;
     color: var(--white-color);
     background-color: var(--dark-color);
     border-radius: 2px;
+    font-size: 1vw;
 }
 
 .team-card-light-layout {

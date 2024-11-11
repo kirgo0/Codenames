@@ -11,40 +11,29 @@
          @onmouseenter="() => ChangeJoinTextVisibility(true)"
          @onmouseleave="() => ChangeJoinTextVisibility(false)">
         <div style="background: linear-gradient(to bottom, @Resources.TransparentColor(Color, 0.6), @Resources.TransparentColor(Color, 0.1) 70%,@Resources.TransparentColor(Color, 0));" class="team-card-light-layout @(ShowJoinText ? "team-card-light-hover" : "")"></div>
-        @foreach (var user in Users)
+        @for(var i = 0; i < TestUsersCount; i++)
         {
-            <div class="user-name-field">
-                <GhostIcon Size="13px" Color="ColorStyle.White"></GhostIcon> @user.UserName
-            </div>
+            <UserItem Color="@(i == 0 ? ColorStyle.CaptainYellow : ColorStyle.White)" User="Users[i]"></UserItem>
         }
     </div>
 </div>
 
 @code {
     [Parameter]
-    public List<UserDto> Users { get; set; } = new();
+    public List<UserDto> Users { get; set; } = new(new[] {
+        new UserDto("kirgo"),
+        new UserDto("solify"),
+        new UserDto("alinka"),
+        new UserDto("sizon")
+    });
 
     [Parameter]
     public int MaxRoomCount { get; set; } = 4;
 
     private bool ShowJoinText { get; set; } = false;
 
-    protected override void OnInitialized()
-    {
-        Users.Add(
-            new UserDto("Kirgo")
-        );
-        Users.Add(
-            new UserDto("szn")
-        );
-        Users.Add(
-            new UserDto("alinka")
-        );
-        Users.Add(
-            new UserDto("oleg")
-        );
-        base.OnInitialized();
-    }
+    [Parameter]
+    public int TestUsersCount { get; set; } = 4;
 
     void ChangeJoinTextVisibility(bool showText)
     {

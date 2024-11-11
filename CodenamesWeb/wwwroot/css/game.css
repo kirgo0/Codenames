@@ -186,7 +186,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2vh 0px;
+    padding: 2vh 0px 1.8vh 0;
 }
 
 .action-button {

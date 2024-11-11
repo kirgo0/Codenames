@@ -1,0 +1,12 @@
+﻿@inherits ColoredComponent
+
+<div class="user-name-field ibm-plex-mono-regular" style="color: @Resources.Color(Color);">
+    <GhostIcon Size="13px" Color="Color"></GhostIcon> @User.UserName
+</div>
+
+@code {
+
+    [Parameter]
+    public UserDto User { get; set; }
+    
+}

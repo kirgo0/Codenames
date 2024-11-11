@@ -7,11 +7,9 @@
     @if(ShowUserList)
     {
         <div class="user-list ibm-plex-mono-regular">
-            @foreach(var userName in UserNames)
+            @for (var i = 0; i < Users.Count; i++)
             {
-                <div class="user-name-field">
-                    <GhostIcon Size="13px" Color="ColorStyle.White"></GhostIcon> @userName
-                </div>
+                <UserItem Color="@(i == 0 ? ColorStyle.CaptainYellow : ColorStyle.White)" User="Users[i]"></UserItem>
             }
         </div>
     }
@@ -21,7 +19,12 @@
     [Parameter]
     public int WordsCount { get; set; } = 9;
 
-    public List<string> UserNames { get; set; } = new(new [] {"kirgo", "solify", "alinka", "sizon"});
+    public List<UserDto> Users { get; set; } = new(new [] {
+        new UserDto("kirgo"),
+        new UserDto("solify"),
+        new UserDto("alinka"),
+        new UserDto("sizon")
+    });
 
     [Parameter]
     public bool ShowUserList { get; set; } = false;
