@@ -1,0 +1,6 @@
+﻿.games-layout {
+    display: grid;
+    grid-template-columns: 6.5fr 3fr;
+    height: 100vh;
+    gap: 1vw;
+}

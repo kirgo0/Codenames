@@ -1,0 +1,25 @@
+﻿<div class="d-flex flex-column">
+    @foreach(var item in Games)
+    {
+        <div>@item.Id, @item.PlayersCount/@item.MaxPlayersCount</div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public List<GameDto> Games { get; set; } = new(new[]
+    {
+        new GameDto(1, 4),
+        new GameDto(2, 12),
+        new GameDto(3, 2),
+        new GameDto(4, 3),
+        new GameDto(5, 1,8),
+        new GameDto(6, 8,8),
+        new GameDto(7, 12),
+        new GameDto(8, 0),
+        new GameDto(9, 0),
+        new GameDto(10, 0),
+        new GameDto(11, 3)
+    });
+}

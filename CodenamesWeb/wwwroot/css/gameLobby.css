@@ -1,10 +1,14 @@
-﻿.team-cards-layout {
-    width: 70%;
-    margin: auto;
+﻿.game-lobby-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3vh 2vw;
+}
+
+.team-cards-layout {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2vw;
-    padding: 3vh 2vw;
 }
 
 .team-card-layout {
@@ -23,7 +27,7 @@
     gap: 4vh;
     padding: 10vh 1vw;
     color: var(--white-color);
-    background-color: var(--dark-color);
+    background-color: rgba(var(--dark-color-t), 0.5);
     border-radius: 2px;
     font-size: 1vw;
 }
@@ -51,13 +55,13 @@
     font-size: 2vw;
     color: var(--white-color);
     text-align: center;
-    transform: translateY(7vh);
-    transition: transform 0.35s ease-out;
+    transition: opacity 0.15s ease-out;
+    opacity: 0;
 }
 
 .join-team-text-hover {
-    transform: translateY(0px);
-    transition: transform 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    opacity: 100%;
 }
 
 .configuration-field-layout {
@@ -70,7 +74,6 @@
     grid-template-columns: 2.15fr 1.3fr;
     gap: 2vw;
     height: 40vh;
-    padding: 5vh 10vw;
 }
 
 .lobby-block-header {
@@ -85,15 +88,16 @@
     height: 80%;
     padding: 1.5vh 1vw;
     justify-content: space-between;
+    gap: 2vw;
 }
 
-.game-settings {
+.game-settings-layout {
     width: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    column-gap: 8vw;
-    row-gap: 3vh;
+    column-gap: 2vw;
+    row-gap: 2vh;
 }
 
 .game-setting {
@@ -117,7 +121,8 @@
 
 .gamemode-circle-layout {
     display: flex;
-    padding: 1.5vh;
+    align-items: center;
+    width: 30%;
 }
 
 .gamemode-circle {
@@ -125,7 +130,7 @@
     align-items: center;
     justify-content: center;
     aspect-ratio: 1/1;
-    height: 100%;
+    width: 100%;
     border-radius: 100%;
     color: var(--dark-color);
     font-size: 9vmin;

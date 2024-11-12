@@ -3,11 +3,10 @@
 <button class="@Style position-relative word-btn-onclick d-flex justify-content-center align-items-center ibm-plex-mono-semibold word-btn" @onclick="ChangeColor" style="background-color: @Resources.Color(Color); color: @Resources.TextColor(Color)">
     @Text
     <div class="word-button-icons">
-        <GhostIcon Color="ColorStyle.Dark"></GhostIcon>
-        <GhostIcon Color="ColorStyle.Dark"></GhostIcon>
-        <GhostIcon Color="ColorStyle.Dark"></GhostIcon>
-        <GhostIcon Color="ColorStyle.Dark"></GhostIcon>
-        <GhostIcon Color="ColorStyle.Dark"></GhostIcon>
+        <GhostIcon Color="IconsColor"></GhostIcon>
+        <GhostIcon Color="IconsColor"></GhostIcon>
+        <GhostIcon Color="IconsColor"></GhostIcon>
+        <GhostIcon Color="IconsColor"></GhostIcon>
     </div>
 </button>
 
@@ -18,6 +17,8 @@
 
     [Parameter]
     public string Style { get; set; } = string.Empty;
+
+    public ColorStyle IconsColor { get => Color is ColorStyle.Dark ? ColorStyle.White : ColorStyle.Dark; }
 
     private void ChangeColor()
     {

@@ -8,7 +8,7 @@
 </button>
 
 <button type="button" @onclick="GoToGameLobby">
-    Lobby
+    Games
 </button>
 
 @code {
@@ -19,6 +19,6 @@
 
     void GoToGameLobby()
     {
-        _navManager.NavigateTo("/gameLobby");
+        _navManager.NavigateTo("/games");
     }
 }
