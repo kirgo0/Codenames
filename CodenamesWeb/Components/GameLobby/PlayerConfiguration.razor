@@ -1,9 +1,22 @@
 ﻿@inherits ColoredComponent
+@inject IJSRuntime js;
 
 <div class="configuration-field-layout">
     <div class="lobby-block-header" style="background-color: @Resources.Color(Color)"></div>
     <div class="player-configuration-block">
-
+        <div class="player-icon-block">
+            <button class="player-icon-arrow-btn">
+                <ArrowLeftIcon Transparency="0.5" Size="4vw"/>
+                </button>
+            <GhostIcon Transparency="0.7" Color="ColorStyle.White" Size="5vw"></GhostIcon>
+            <button class="player-icon-arrow-btn">
+                <ArrowRightIcon Transparency="0.5" Size="4vw" />
+                </button>
+        </div>
+        <div class="player-name-block">
+            <input @oninput="@(async () => await js.InvokeVoidAsync("adjustHrWidth"))" id="dynamicNameInput" class="player-name-input ibm-plex-mono-regular" type="text" placeholder="name"/>
+            <hr id="dynamicNameHr" class="player-name-input-hr" />
+        </div>
     </div>
 </div>
 

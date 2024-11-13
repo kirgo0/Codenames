@@ -15,6 +15,9 @@
     <Content Update="Components\GameLobby\GameLobby.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+    <Content Update="wwwroot\js\script.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
