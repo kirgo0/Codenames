@@ -2,5 +2,76 @@
     display: grid;
     grid-template-columns: 6.5fr 3fr;
     height: 100vh;
-    gap: 1vw;
+    gap: 2vw;
+    padding: 3vh 2vw;
+}
+
+.game-list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    height: 100%;
+}
+
+.game-list-menu {
+    height: 15%;
+    width: 100%;
+}
+
+.game-list-table-container {
+    width: 100%;
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.game-list-table {
+    width: 100%;
+    margin: 0;
+    color: var(--white-color);
+    border: 1px solid var(--dark-color);
+    background-color: rgba(var(--dark-color-t), .3);
+    text-align: right;
+}
+
+.game-list-table thead {
+    background-color: rgba(var(--dark-color-t), 0.3);
+    font-size: 0.7vw;
+    font-style: italic;
+    color: var(--cap-yellow-color);
+}
+
+.game-list-table tbody {
+    font-size: 0.8vw;
+}
+
+.game-list-table td::selection {
+    color: var(--dark-color);
+    background-color: rgba(var(--white-color-t), 0.3);
+}
+
+.game-list-table td {
+    padding: 3px 5px;
+    border-right: 1px solid var(--dark-color);
+}
+
+.game-list-table tbody tr:hover {
+    background-color: rgba(var(--white-color-t), 0.1);
+    cursor: pointer;
+}
+
+.game-list-table td:nth-child(1) {
+    user-select: all;
+}
+
+.game-list-table td:nth-child(2) {
+    max-width: 150px;
+    user-select: none;
+}
+
+.game-list-table #last-row {
+    min-height: 1vh;
+}
+
+.game-list-table #last-row:hover {
+    background-color: transparent;
 }

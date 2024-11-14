@@ -1,8 +1,41 @@
-﻿<div class="d-flex flex-column">
-    @foreach(var item in Games)
-    {
-        <div>@item.Id, @item.PlayersCount/@item.MaxPlayersCount</div>
-    }
+﻿@inject IJSRuntime _js
+
+<div class="game-list-layout">
+    <div class="game-list-menu">
+        menu block
+    </div>
+    <div class="game-list-table-container">
+        <table id="game-list-table" class="game-list-table">
+            <thead class="ibm-plex-mono-regular">
+                <tr>
+                    <td>
+                        Id
+                    </td>
+                    <td>
+                        В кімнаті/максимально
+                    </td>
+                    <td>
+                        Якісь інші налаштування
+                    </td>
+                </tr>
+            </thead>
+            <tbody class="ibm-plex-mono-regular">
+                @foreach (var game in Games)
+                {
+                    <tr>
+                        <td>@game.Id</td>
+                        <td>@game.PlayersCount / @game.MaxPlayersCount</td>
+                        <td></td>
+                    </tr>
+                }
+                <tr id="last-row">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 @code {
@@ -22,4 +55,14 @@
         new GameDto(10, 0),
         new GameDto(11, 3)
     });
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender)
+        {
+            await _js.InvokeVoidAsync("calculateLastRowHeight");
+            StateHasChanged();
+        }
+    }
+
 }
