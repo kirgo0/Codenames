@@ -11,3 +11,14 @@ function calculateLastRowHeight() {
     console.log(table.parentElement.clientHeight);
     row.style.height = table.parentElement.clientHeight - table.clientHeight + "px";
 }
+
+window.clipboardCopy = {
+    copyText: function (text) {
+        navigator.clipboard.writeText(text).then(function () {
+            //alert("Copied to clipboard!");
+        })
+        .catch(function (error) {
+            //alert(error);
+        });
+    }
+};

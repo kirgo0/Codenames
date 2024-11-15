@@ -1,9 +1,8 @@
 ﻿.games-layout {
     display: grid;
     grid-template-columns: 6.5fr 3fr;
-    height: 100vh;
+    height: 100%;
     gap: 2vw;
-    padding: 3vh 2vw;
 }
 
 .game-list-layout {
@@ -15,7 +14,27 @@
 
 .game-list-menu {
     height: 15%;
-    width: 100%;
+}
+
+.game-code-block {
+    background-color: rgba(var(--dark-color-t), 0.3);
+    padding: 2vh 1vw;
+    border-radius: 10px;
+}
+
+.game-code-label {
+    color: var(--cap-yellow-color);
+}
+
+.game-code-text {
+    text-transform: uppercase;
+    font-size: 1.7vw;
+    color: var(--white-color);
+}
+
+.game-list-menu-buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .game-list-table-container {
