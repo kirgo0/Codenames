@@ -1,0 +1,37 @@
+﻿@inherits ColoredComponent
+
+<div style="box-shadow: 0px 0px 5px 3.5px @Resources.Color(Color);"
+     class="team-card"
+     @onmouseenter="() => ChangeJoinTextVisibility(true)"
+     @onmouseleave="() => ChangeJoinTextVisibility(false)">
+    <div style="background: linear-gradient(to bottom, @Resources.TransparentColor(Color, 0.6), @Resources.TransparentColor(Color, 0.1) 70%,@Resources.TransparentColor(Color, 0));" class="team-card-light-layout @(ShowJoinText ? "team-card-light-hover" : "")"></div>
+    @for (var i = 0; i < TestUsersCount; i++)
+    {
+        <UserItem Color="@(i == 0 ? ColorStyle.CaptainYellow : ColorStyle.White)" User="Users[i]"></UserItem>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<UserDto> Users { get; set; } = new(new[] {
+        new UserDto("kirgo"),
+        new UserDto("solify"),
+        new UserDto("alinka"),
+        new UserDto("sizon")
+    });
+
+    [Parameter]
+    public int MaxRoomCount { get; set; } = 4;
+
+    private bool ShowJoinText { get; set; } = false;
+
+    [Parameter]
+    public int TestUsersCount { get; set; } = 4;
+
+    void ChangeJoinTextVisibility(bool showText)
+    {
+        ShowJoinText = showText;
+        StateHasChanged();
+    }
+
+}

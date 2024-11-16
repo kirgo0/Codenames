@@ -1,8 +1,18 @@
 ﻿@page "/games"
 
 <div class="games-layout">
-    <GameLobby></GameLobby>
+    <div class="lobby-blocks-layout">
+        <GameConfiguration></GameConfiguration>
+        <PlayerConfiguration Color="ColorStyle.Red"></PlayerConfiguration>
+    </div>
     <GamesList></GamesList>
+
+    <div class="d-flex justify-content-center team-cards-layout">
+        <TeamCard TestUsersCount="1" Color="ColorStyle.Blue"></TeamCard>
+        <TeamCard Color="ColorStyle.Red"></TeamCard>
+        <TeamCard TestUsersCount="2" Color="ColorStyle.Green"></TeamCard>
+        <TeamCard TestUsersCount="3" Color="ColorStyle.Yellow"></TeamCard>
+    </div>
 </div>
 
 @code {

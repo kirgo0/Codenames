@@ -1,25 +1,23 @@
 ﻿@inject IJSRuntime _js
 
 <div class="game-list-layout">
-    <div class="w-100 d-flex flex-column game-list-menu">
-        <div class="d-flex justify-content-between">
-            <div class="game-code-block d-flex gap-5">
-                <div class="d-flex flex-column">
-                    <div class="game-code-label ibm-plex-mono-regular">
-                        Код кімнати
-                    </div>
-                    <div class="game-code-text ibm-plex-mono-bold">
-                        #@GameRoomCode
-                    </div>
+    <div class="w-100 d-flex justify-content-between">
+        <div class="game-code-block d-flex gap-5">
+            <div class="d-flex flex-column">
+                <div class="game-code-label ibm-plex-mono-regular">
+                    Код кімнати
                 </div>
-                <button @onclick="CopyTextToClipboard">
-                    <CopyIcon Size="2vw" />
-                </button>
+                <div class="game-code-text ibm-plex-mono-bold">
+                    #@GameRoomCode
+                </div>
             </div>
-            <button>
-                <DoorIcon Size="2vw" />
+            <button @onclick="CopyTextToClipboard">
+                <CopyIcon Size="2vw" />
             </button>
         </div>
+        <button>
+            <DoorIcon Size="2vw" />
+        </button>
     </div>
     <div class="game-list-table-container">
         <table id="game-list-table" class="game-list-table">
@@ -79,7 +77,7 @@
     {
         if(firstRender)
         {
-            await _js.InvokeVoidAsync("calculateLastRowHeight");
+            // await _js.InvokeVoidAsync("calculateLastRowHeight");
             StateHasChanged();
         }
     }
