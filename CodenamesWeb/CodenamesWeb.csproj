@@ -12,9 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Components\Games\GameLobby.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
     <Content Update="wwwroot\js\script.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

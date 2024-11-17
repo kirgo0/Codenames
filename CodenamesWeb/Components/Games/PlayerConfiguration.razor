@@ -1,21 +1,26 @@
 ﻿@inherits ColoredComponent
 @inject IJSRuntime js;
 
-<div class="configuration-field-layout">
-    <div class="lobby-block-header" style="background-color: @Resources.Color(Color)"></div>
-    <div class="player-configuration-block">
-        <div class="player-icon-block">
-            <button class="player-icon-arrow-btn">
-                <ArrowLeftIcon Transparency="0.5" Size="4vw"/>
-                </button>
+@*ready to clear*@
+<div class="position-relative overflow-hidden configuration-field-layout">
+    @*ready to clear*@
+    <div class="w-100 lobby-block-header" style="background-color: @Resources.Color(Color)"></div>
+    @*ready to clear*@
+    <div class="d-flex flex-column align-items-center justify-content-center player-configuration-block">
+        <div class="d-flex">
+            <button>
+                <ArrowLeftIcon Transparency="0.5" Size="4vw" />
+            </button>
             <GhostIcon Transparency="0.7" Color="ColorStyle.White" Size="5vw"></GhostIcon>
-            <button class="player-icon-arrow-btn">
+            <button>
                 <ArrowRightIcon Transparency="0.5" Size="4vw" />
-                </button>
+            </button>
         </div>
-        <div class="player-name-block">
-            <input @oninput="@(async () => await js.InvokeVoidAsync("adjustHrWidth"))" id="dynamicNameInput" class="player-name-input ibm-plex-mono-regular" type="text" placeholder="name"/>
-            <hr id="dynamicNameHr" class="player-name-input-hr" />
+        <div class="mw-100 d-flex flex-column align-items-center overflow-hidden">
+            @*ready to clear*@
+            <input @oninput="@(async () => await js.InvokeVoidAsync("adjustHrWidth"))" id="dynamicNameInput" class="mw-100 bs-con bg-transparent border-0 text-center player-name-input ibm-plex-mono-regular" type="text" placeholder="name" />
+            @*ready to clear*@
+            <hr id="dynamicNameHr" class="m-0 opacity-100 player-name-input-hr" />
         </div>
     </div>
 </div>

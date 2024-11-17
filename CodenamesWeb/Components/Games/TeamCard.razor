@@ -1,10 +1,11 @@
 ﻿@inherits ColoredComponent
 
+@*ready to clear*@
 <div style="box-shadow: 0px 0px 5px 3.5px @Resources.Color(Color);"
-     class="team-card"
+     class="position-relative d-flex flex-column justify-content-center align-items-center h-auto team-card"
      @onmouseenter="() => ChangeJoinTextVisibility(true)"
      @onmouseleave="() => ChangeJoinTextVisibility(false)">
-    <div style="background: linear-gradient(to bottom, @Resources.TransparentColor(Color, 0.6), @Resources.TransparentColor(Color, 0.1) 70%,@Resources.TransparentColor(Color, 0));" class="team-card-light-layout @(ShowJoinText ? "team-card-light-hover" : "")"></div>
+    <div style="background: linear-gradient(to bottom, @Resources.TransparentColor(Color, 0.6), @Resources.TransparentColor(Color, 0.1) 70%,@Resources.TransparentColor(Color, 0));" class="position-absolute w-100 h-50 top-0 team-card-light-layout @(ShowJoinText ? "team-card-light-hover" : "")"></div>
     @for (var i = 0; i < TestUsersCount; i++)
     {
         <UserItem Color="@(i == 0 ? ColorStyle.CaptainYellow : ColorStyle.White)" User="Users[i]"></UserItem>

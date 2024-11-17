@@ -1,12 +1,15 @@
 ﻿@inherits ColoredComponent
 
-<div class="team-block-layout">
-    <div class="team-circle ibm-plex-mono-semibold" style="background-color: @Resources.TransparentColor(Color, 0.5)">
+@*ready to clear*@
+<div class="d-flex team-block-layout">
+    @*ready to clear*@
+    <div class="d-flex align-items-center justify-content-center h-100 rounded-circle user-select-none team-circle ibm-plex-mono-semibold" style="background-color: @Resources.TransparentColor(Color, 0.5)">
         @WordsCount
     </div>
     @if(ShowUserList)
     {
-        <div class="user-list ibm-plex-mono-regular">
+        @*ready to clear*@
+        <div class="d-flex flex-column justify-content-around user-list ibm-plex-mono-regular">
             @for (var i = 0; i < Users.Count; i++)
             {
                 <UserItem Color="@(i == 0 ? ColorStyle.CaptainYellow : ColorStyle.White)" User="Users[i]"></UserItem>

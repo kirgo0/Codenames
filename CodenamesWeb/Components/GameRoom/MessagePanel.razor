@@ -1,13 +1,17 @@
-﻿<div class="messages-field-layout">
-    <div class="messages-panel messages-up-direction">
+﻿@*ready to clear*@
+<div class="d-flex flex-column overflow-hidden messages-field-layout">
+    @*ready to clear*@
+    <div class="h-50 d-flex flex-column messages-panel flex-column-reverse">
         <Message Item="messages[0]"></Message>
         <Message Item="messages[1]"></Message>
         <Message Item="messages[2]"></Message>
         <Message Item="messages[2]"></Message>
         <Message Item="messages[2]"></Message>
     </div>
-    <hr class="messages-panel-hr"/>
-    <div class="messages-panel">
+    @*ready to clear*@
+    <hr class="m-0 messages-panel-hr" />
+    @*ready to clear*@
+    <div class="h-50 d-flex flex-column messages-panel">
         <Message Item="messages[3]"></Message>
         <Message Item="messages[3]"></Message>
         <Message Item="messages[3]"></Message>
@@ -15,19 +19,24 @@
     </div>
     @if(IsCaptian)
     {
-        <div class="message-input-layout">
-            <div class="message-input-field">
+        @*ready to clear*@
+        <div class="d-flex flex-column message-input-layout">
+            @*ready to clear*@
+            <div class="d-flex m-0 justify-content-between message-input-field">
+                @*ready to clear*@
                 <input 
                     @bind:event="oninput"
                     @bind="@MessageToSend.Text"
-                class="message-text-input ibm-plex-mono-regular" type="text" placeholder="слово"/>
+                    class="message-text-input ibm-plex-mono-regular" type="text" placeholder="слово"/>
                 <div class="message-input-separator">
-
                 </div>
+                @*ready to clear*@
                 <input 
                     @bind:event="oninput" 
-                    @bind="@MessageToSend.Count" class="message-number-input ibm-plex-mono-bold" type="number"/>
+                    @bind="@MessageToSend.Count"
+                    class="text-center message-number-input ibm-plex-mono-bold" type="number"/>
             </div>
+            @*ready to clear*@
             <button disabled="@(!IsMessageValid)" class="message-input-button ibm-plex-mono-bold" style="background-color: @GetButtonColor()">Відправити</button>
         </div>
     }   

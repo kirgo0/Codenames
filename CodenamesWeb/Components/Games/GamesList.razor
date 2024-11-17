@@ -1,13 +1,17 @@
 ﻿@inject IJSRuntime _js
 
-<div class="game-list-layout">
+@*ready to clear*@
+<div class="d-flex flex-column game-list-layout">
     <div class="w-100 d-flex justify-content-between">
-        <div class="game-code-block d-flex gap-5">
+        @*ready to clear*@
+        <div class="d-flex game-code-block">
             <div class="d-flex flex-column">
+                @*ready to clear*@
                 <div class="game-code-label ibm-plex-mono-regular">
                     Код кімнати
                 </div>
-                <div class="game-code-text ibm-plex-mono-bold">
+                @*ready to clear*@
+                <div class="text-uppercase game-code-text ibm-plex-mono-bold">
                     #@GameRoomCode
                 </div>
             </div>
@@ -19,8 +23,11 @@
             <DoorIcon Size="2vw" />
         </button>
     </div>
-    <div class="game-list-table-container">
-        <table id="game-list-table" class="game-list-table">
+    @*ready to clear*@
+    <div class="w-100 game-list-table-container">
+        @*ready to clear*@
+        <table id="game-list-table" class="w-100 m-0 game-list-table text-end">
+            @*ready to clear*@
             <thead class="ibm-plex-mono-regular">
                 <tr>
                     <td>
@@ -34,6 +41,7 @@
                     </td>
                 </tr>
             </thead>
+            @*ready to clear*@
             <tbody class="ibm-plex-mono-regular">
                 @foreach (var game in Games)
                 {
