@@ -1,17 +1,16 @@
 ﻿.games-layout {
     width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: 6.5fr 3fr;
     grid-template-rows: 40vh auto;
-    gap: 2vw;
+    gap: var(--default-gap);
 }
 
 .game-list-layout {
     grid-row-start: span 2;
     display: flex;
     flex-direction: column;
-    gap: 4vh;
+    gap: var(--default-gap);
 }
 
 .game-code-block {
@@ -87,6 +86,7 @@
 
 .game-list-table #last-row {
     min-height: 1vh;
+    cursor: default;
 }
 
 .game-list-table #last-row:hover {
@@ -96,11 +96,12 @@
 .game-lobby-layout {
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: var(--default-gap);
 }
 
 .team-cards-layout {
-    gap: 2vw;
+    gap: var(--default-gap);
+    width: 100%;
 }
 
 .team-card {
@@ -109,14 +110,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    gap: 4vh;
-    color: var(--white-color);
     background-color: rgba(var(--dark-color-t), 0.5);
+    color: var(--white-color);
     border-radius: 2px;
     font-size: 1vw;
-    max-width: 25%;
-    aspect-ratio: 1 / 1.7;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1.6;
+    flex: 1;
+    height: auto;
+    max-height: calc(100vh - var(--main-vpad)*2 - var(--default-gap) - 40vh);
+    gap: var(--default-gap);
 }
 
 .team-card-light-layout {
@@ -143,7 +146,7 @@
 .lobby-blocks-layout {
     display: grid;
     grid-template-columns: 2.15fr 1.3fr;
-    gap: 2vw;
+    gap: var(--default-gap);
     height: 40vh;
 }
 
@@ -159,7 +162,7 @@
     height: 80%;
     padding: 1.5vh 1vw;
     justify-content: space-between;
-    gap: 2vw;
+    gap: var(--default-gap);
 }
 
 .game-settings-layout {
@@ -167,8 +170,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    column-gap: 2vw;
-    row-gap: 2vh;
+    gap: var(--default-gap);
 }
 
 .game-setting {
@@ -263,10 +265,10 @@
     box-sizing: content-box;
 }
 
-    .player-name-input::selection {
-        color: var(--dark-color);
-        background-color: rgba(var(--white-color-t), 0.5);
-    }
+.player-name-input::selection {
+    color: var(--dark-color);
+    background-color: rgba(var(--white-color-t), 0.5);
+}
 
 .player-name-input-hr {
     border: 1px solid var(--white-color);

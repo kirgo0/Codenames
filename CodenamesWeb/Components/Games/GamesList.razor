@@ -77,7 +77,7 @@
     {
         if(firstRender)
         {
-            // await _js.InvokeVoidAsync("calculateLastRowHeight");
+            await _js.InvokeVoidAsync("calculateLastRowHeight");
             StateHasChanged();
         }
     }
