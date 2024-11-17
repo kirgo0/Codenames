@@ -1,5 +1,5 @@
 ﻿@*ready to clear*@
-<div class="d-flex flex-column overflow-hidden messages-field-layout">
+<div class="d-flex flex-column br-default messages-field-layout overflow-hidden">
     @*ready to clear*@
     <div class="h-50 d-flex flex-column messages-panel flex-column-reverse">
         <Message Item="messages[0]"></Message>
@@ -34,10 +34,10 @@
                 <input 
                     @bind:event="oninput" 
                     @bind="@MessageToSend.Count"
-                    class="text-center message-number-input ibm-plex-mono-bold" type="number"/>
+                    class="message-number-input ibm-plex-mono-bold text-center" type="number"/>
             </div>
             @*ready to clear*@
-            <button disabled="@(!IsMessageValid)" class="message-input-button ibm-plex-mono-bold" style="background-color: @GetButtonColor()">Відправити</button>
+            <button disabled="@(!IsMessageValid)" class="text-dark message-input-button ibm-plex-mono-bold" style="background-color: @GetButtonColor()">Відправити</button>
         </div>
     }   
 </div>

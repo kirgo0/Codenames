@@ -2,7 +2,7 @@
 
 @*ready to clear*@
 <div style="box-shadow: 0px 0px 5px 3.5px @Resources.Color(Color);"
-     class="position-relative d-flex flex-column justify-content-center align-items-center h-auto team-card"
+     class="position-relative d-flex flex-column justify-content-center align-items-center h-auto gap-default team-card"
      @onmouseenter="() => ChangeJoinTextVisibility(true)"
      @onmouseleave="() => ChangeJoinTextVisibility(false)">
     <div style="background: linear-gradient(to bottom, @Resources.TransparentColor(Color, 0.6), @Resources.TransparentColor(Color, 0.1) 70%,@Resources.TransparentColor(Color, 0));" class="position-absolute w-100 h-50 top-0 team-card-light-layout @(ShowJoinText ? "team-card-light-hover" : "")"></div>

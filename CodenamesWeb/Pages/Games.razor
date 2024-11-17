@@ -1,14 +1,14 @@
 ﻿@page "/games"
 
-<div class="w-100 d-grid games-layout">
+<div class="w-100 d-grid gap-default games-layout">
     @*ready to clear*@
-    <div class="d-grid lobby-blocks-layout">
+    <div class="d-grid gap-default lobby-blocks-layout">
         <GameConfiguration></GameConfiguration>
         <PlayerConfiguration Color="ColorStyle.Red"></PlayerConfiguration>
     </div>
     <GamesList></GamesList>
 
-    <div class="d-flex justify-content-center team-cards-layout">
+    <div class="d-flex justify-content-center gap-default">
         <TeamCard TestUsersCount="1" Color="ColorStyle.Blue"></TeamCard>
         <TeamCard Color="ColorStyle.Red"></TeamCard>
         <TeamCard TestUsersCount="2" Color="ColorStyle.Green"></TeamCard>

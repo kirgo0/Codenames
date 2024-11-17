@@ -2,11 +2,11 @@
 @inject IJSRuntime js;
 
 @*ready to clear*@
-<div class="position-relative overflow-hidden configuration-field-layout">
+<div class="position-relative br-default configuration-field-layout overflow-hidden">
     @*ready to clear*@
     <div class="w-100 lobby-block-header" style="background-color: @Resources.Color(Color)"></div>
     @*ready to clear*@
-    <div class="d-flex flex-column align-items-center justify-content-center player-configuration-block">
+    <div class="d-flex flex-column align-items-center justify-content-center gap-default player-configuration-block">
         <div class="d-flex">
             <button>
                 <ArrowLeftIcon Transparency="0.5" Size="4vw" />
@@ -20,7 +20,7 @@
             @*ready to clear*@
             <input @oninput="@(async () => await js.InvokeVoidAsync("adjustHrWidth"))" id="dynamicNameInput" class="mw-100 bs-con bg-transparent border-0 text-center player-name-input ibm-plex-mono-regular" type="text" placeholder="name" />
             @*ready to clear*@
-            <hr id="dynamicNameHr" class="m-0 opacity-100 player-name-input-hr" />
+            <hr id="dynamicNameHr" class="m-0 player-name-input-hr opacity-100" />
         </div>
     </div>
 </div>
