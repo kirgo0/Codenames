@@ -152,6 +152,7 @@ body {
 
 .user-name-field {
     gap: 10px;
+    font-size: 1vw;
 }
 
 .timer-action-text {
@@ -182,18 +183,19 @@ body {
     border-radius: 7px 7px 7px 7px;
 }
 
+.message-text {
+    word-wrap: anywhere;
+}
+
 .message-block-layout {
-    background-color: rgba(var(--bg-color-t), 0.5);
-    padding: 1vh 1vw;
+    padding: 1vh 1vw 1vh 0;
     gap: 1vw;
 }
 
-.message-pin-layout {
-    padding: 5px;
-}
-
 .message-pin {
-    aspect-ratio: 1/1;
+    min-width: 5px;
+    width: 5px;
+    border-radius: 0 10px 10px 0;
 }
 
 .message-username {

@@ -1,21 +1,18 @@
 ﻿@*ready to clear*@
 <div class="d-flex flex-column br-default messages-field-layout overflow-hidden">
     @*ready to clear*@
-    <div class="h-50 d-flex flex-column messages-panel flex-column-reverse">
+    <div class="h-100 d-flex flex-column messages-panel">
         <Message Item="messages[0]"></Message>
         <Message Item="messages[1]"></Message>
         <Message Item="messages[2]"></Message>
-        <Message Item="messages[2]"></Message>
-        <Message Item="messages[2]"></Message>
-    </div>
-    @*ready to clear*@
-    <hr class="m-0 messages-panel-hr" />
-    @*ready to clear*@
-    <div class="h-50 d-flex flex-column messages-panel">
         <Message Item="messages[3]"></Message>
+        <Message Item="messages[1]"></Message>
         <Message Item="messages[3]"></Message>
-        <Message Item="messages[3]"></Message>
-        <Message Item="messages[3]"></Message>
+        <Message Item="messages[0]"></Message>
+        <Message Item="messages[1]"></Message>
+        <Message Item="messages[1]"></Message>
+        <Message Item="messages[1]"></Message>
+        <Message Item="messages[1]"></Message>
     </div>
     @if(IsCaptian)
     {
@@ -82,28 +79,28 @@
             Count = 2,
             Color = ColorStyle.Green,
             From = new UserDto("chokopie")
-            });
+        });
         messages.Add(new MessageDto()
-            {
-                Text = "якесь_слово",
-                Count = 3,
-                Color = ColorStyle.Blue,
-                From = new UserDto("solify")
-            });
+        {
+            Text = "якесь_словоsad",
+            Count = 3,
+            Color = ColorStyle.Blue,
+            From = new UserDto("solify")
+        });
         messages.Add(new MessageDto()
-            {
-                Text = "якесь_слово",
-                Count = 1,
-                Color = ColorStyle.Green,
-                From = new UserDto("chokopie")
-            });
+        {
+            Text = "якесь_слово",
+            Count = 1,
+            Color = ColorStyle.Green,
+            From = new UserDto("chokopie")
+        });
         messages.Add(new MessageDto()
-            {
-                Text = "якесь_слово",
-                Count = 2,
-                Color = ColorStyle.Red,
-                From = new UserDto("kirgo")
-            });
+        {
+            Text = "якесь_слово",
+            Count = 2,
+            Color = ColorStyle.Red,
+            From = new UserDto("kirgo")
+        });
     }
 
 

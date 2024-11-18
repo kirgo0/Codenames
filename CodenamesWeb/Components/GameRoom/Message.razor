@@ -1,11 +1,8 @@
 ﻿@*ready to clear*@
-<div class="d-flex message-block-layout">
+<div class="w-100 d-flex message-block-layout">
     @*ready to clear*@
-    <div class="message-pin-layout">
-        @*ready to clear*@
-        <div class="h-100 rounded-circle message-pin" style="background-color: @Resources.Color(Item.Color)"></div>
-    </div>
-    <div class="ibm-plex-mono-regular">
+    <div class="h-100 message-pin" style="background-color: @Resources.Color(Item.Color)"></div>
+    <div class="message-text ibm-plex-mono-regular">
         @*ready to clear*@
         <div class="fst-italic text-decoration-underline message-username" style="color: @Resources.Color(Item.Color)">
             @Item.From.UserName
@@ -15,7 +12,7 @@
             @Item.Text
         </div>
     </div>
-    <div class="ms-auto message-count ibm-plex-mono-bold">
+    <div class="d-flex align-items-center message-count ibm-plex-mono-bold ms-auto">
         @Item.Count
     </div>
 </div>
