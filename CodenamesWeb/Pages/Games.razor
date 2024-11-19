@@ -1,21 +1,44 @@
 ﻿@page "/games"
 
 <div class="w-100 d-grid gap-default games-layout">
-    @*ready to clear*@
-    <div class="d-grid gap-default lobby-blocks-layout">
-        <GameConfiguration></GameConfiguration>
-        <PlayerConfiguration Color="ColorStyle.Red"></PlayerConfiguration>
-    </div>
-    <GamesList></GamesList>
-
-    <div class="d-flex justify-content-center gap-default">
-        <TeamCard TestUsersCount="1" Color="ColorStyle.Blue"></TeamCard>
-        <TeamCard Color="ColorStyle.Red"></TeamCard>
-        <TeamCard TestUsersCount="2" Color="ColorStyle.Green"></TeamCard>
-        <TeamCard TestUsersCount="3" Color="ColorStyle.Yellow"></TeamCard>
-    </div>
+    <CascadingValue TValue="LobbyConfigurationDto" Value="LobbyConfigurationDto">
+        @*ready to clear*@
+        <div class="d-grid gap-default lobby-blocks-layout">
+            <LobbyConfiguration></LobbyConfiguration>
+            <PlayerConfiguration Color="ColorStyle.Red"></PlayerConfiguration>
+        </div>
+        <LobbyList></LobbyList>
+        <div class="d-flex justify-content-center gap-default">
+            @if(LobbyConfigurationDto is not null)
+            {
+                if(LobbyConfigurationDto.TeamCount >= 2)
+                {
+                    <TeamCard Color="ColorStyle.Blue"></TeamCard>
+                    <TeamCard Color="ColorStyle.Red"></TeamCard>
+                }
+                if (LobbyConfigurationDto.TeamCount >= 3)
+                {
+                    <TeamCard Color="ColorStyle.Green"></TeamCard>
+                }
+                if (LobbyConfigurationDto.TeamCount == 4)
+                {
+                    <TeamCard Color="ColorStyle.Yellow"></TeamCard>
+                }
+            } else
+            {
+                @* TODO: some loading logic *@
+            } 
+        </div>
+    </CascadingValue>
 </div>
 
 @code {
-
+    public LobbyConfigurationDto LobbyConfigurationDto { get; set; } = new()
+    {
+        LobbyId = Guid.NewGuid().ToString(),
+        GameMode = "default",
+        TeamCount = 3,
+        WordCount = 25,
+        TurnTimeInSeconds = 60
+    };
 }

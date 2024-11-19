@@ -2,27 +2,33 @@
 
 @*ready to clear*@
 <div class="d-flex flex-column gap-default game-list-layout">
-    <div class="w-100 d-flex justify-content-between">
-        @*ready to clear*@
-        <div class="d-flex gap-default br-default game-code-block">
-            <div class="d-flex flex-column">
-                @*ready to clear*@
-                <div class="game-code-label ibm-plex-mono-regular">
-                    Код кімнати
+    @if(LobbyConfigurationDto is not null)
+    {
+        <div class="w-100 d-flex justify-content-between">
+            @*ready to clear*@
+            <div class="d-flex gap-default br-default game-code-block">
+                <div class="d-flex flex-column">
+                    @*ready to clear*@
+                    <div class="game-code-label ibm-plex-mono-regular">
+                        Код кімнати
+                    </div>
+                    @*ready to clear*@
+                    <div class="text-uppercase game-code-text ibm-plex-mono-bold">
+                        #@GameRoomCode
+                    </div>
                 </div>
-                @*ready to clear*@
-                <div class="text-uppercase game-code-text ibm-plex-mono-bold">
-                    #@GameRoomCode
-                </div>
+                <button @onclick="CopyTextToClipboard">
+                    <CopyIcon Size="2vw" />
+                </button>
             </div>
-            <button @onclick="CopyTextToClipboard">
-                <CopyIcon Size="2vw" />
+            <button>
+                <DoorIcon Size="2vw" />
             </button>
         </div>
-        <button>
-            <DoorIcon Size="2vw" />
-        </button>
-    </div>
+    } else
+    {
+        @*TODO: some loading logic*@
+    }
     @*ready to clear*@
     <div class="w-100 game-list-table-container">
         @*ready to clear*@
@@ -46,7 +52,7 @@
                 @foreach (var game in Games)
                 {
                     <tr>
-                        <td>@game.Id</td>
+                        <td>@game.LobbyId</td>
                         <td>@game.PlayersCount / @game.MaxPlayersCount</td>
                         <td></td>
                     </tr>
@@ -63,20 +69,23 @@
 
 @code {
 
+    [CascadingParameter]
+    public LobbyConfigurationDto LobbyConfigurationDto { get; set; }
+
     [Parameter]
-    public List<GameDto> Games { get; set; } = new(new[]
+    public List<LobbyDto> Games { get; set; } = new(new[]
     {
-        new GameDto(1, 4),
-        new GameDto(2, 12),
-        new GameDto(3, 2),
-        new GameDto(4, 3),
-        new GameDto(5, 1,8),
-        new GameDto(6, 8,8),
-        new GameDto(7, 12),
-        new GameDto(8, 0),
-        new GameDto(9, 0),
-        new GameDto(10, 0),
-        new GameDto(11, 3)
+        new LobbyDto(Guid.NewGuid().ToString(), 4),
+        new LobbyDto(Guid.NewGuid().ToString(), 12),
+        new LobbyDto(Guid.NewGuid().ToString(), 2),
+        new LobbyDto(Guid.NewGuid().ToString(), 3),
+        new LobbyDto(Guid.NewGuid().ToString(), 1,8),
+        new LobbyDto(Guid.NewGuid().ToString(), 8,8),
+        new LobbyDto(Guid.NewGuid().ToString(), 12),
+        new LobbyDto(Guid.NewGuid().ToString(), 0),
+        new LobbyDto(Guid.NewGuid().ToString(), 0),
+        new LobbyDto(Guid.NewGuid().ToString(), 0),
+        new LobbyDto(Guid.NewGuid().ToString(), 3)
     });
 
     public string GameRoomCode { get; set; } = "D9812SdgfD3";

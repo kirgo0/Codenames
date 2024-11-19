@@ -1,0 +1,69 @@
+﻿@if (LobbyConfigurationDto is not null)
+{
+    @*ready to clear*@
+    <div class="br-default configuration-field-layout">
+        @*ready to clear*@
+        <div class="lobby-block-header"></div>
+        @*ready to clear*@
+        <div class="d-flex justify-content-between gap-default lobby-configuration-block">
+            <GamemodeCircle></GamemodeCircle>
+            @*ready to clear*@
+            <div class="d-grid gap-default game-settings-layout">
+                @if(IsCaptain)
+                {
+                
+                } else
+                {
+                    <ConfigurationItem Title="Режим" Value="@GetGameMode()" />
+                    <ConfigurationItem Title="Слова" Value="@GetWordCount()" />
+                    <ConfigurationItem Title="Команди" Value="@GetTeamCount()" />
+                    <ConfigurationItem Title="Час ходу" Value="@GetTurnTime()" />
+                }
+            </div>
+        </div>
+    </div>
+} else
+{
+    @*TODO: some loading logic *@
+}
+
+@code {
+    [Parameter]
+    public bool IsCaptain { get; set; } = false;
+
+    [CascadingParameter]
+    public LobbyConfigurationDto LobbyConfigurationDto { get; set; }
+
+    private string GetGameMode()
+    {
+        if (LobbyConfigurationDto.GameMode.Equals("default")) return "Звичайний";
+        else return "unknown";
+    }
+
+    private string GetTeamCount()
+    {
+        return $"{LobbyConfigurationDto.TeamCount} команди";
+    }
+
+    private string GetWordCount()
+    {
+        return $"{LobbyConfigurationDto.WordCount} слів";
+    }
+
+    private string GetTurnTime()
+    {
+        var time = LobbyConfigurationDto.TurnTimeInSeconds;
+        if(time < 60)
+        {
+            return $"{time} секунд";
+        }
+        else if (time == 60)
+        {
+            return $"1 хвилина";
+        }
+        else
+        {
+            return $"{time/60} хв. {time%60} сек.";
+        }
+    }
+}

@@ -1,0 +1,17 @@
+﻿<div class="d-flex flex-column">
+    <div class="text-uppercase fst-italic setting-name-text ibm-plex-mono-bold">
+        @Title
+    </div>
+    <div class="fst-italic setting-value-text ibm-plex-mono-regular">
+        @Value
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public string Value { get; set; }
+
+}

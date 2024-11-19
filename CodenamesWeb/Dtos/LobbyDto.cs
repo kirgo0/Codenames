@@ -1,20 +1,20 @@
 ﻿namespace CodenamesWeb.Dtos
 {
-    public class GameDto
+    public class LobbyDto
     {
-        public int Id { get; set; }
+        public string LobbyId { get; set; }
         public int PlayersCount { get; set; }
         public int MaxPlayersCount { get; set; } = 12;
 
-        public GameDto(int id, int playersCount, int maxPlayersCount)
+        public LobbyDto(string id, int playersCount, int maxPlayersCount)
         {
-            Id = id;
+            LobbyId = id;
             PlayersCount = playersCount;
             MaxPlayersCount = maxPlayersCount;
         }
-        public GameDto(int id, int playersCount)
+        public LobbyDto(string id, int playersCount)
         {
-            Id = id;
+            LobbyId = id;
             PlayersCount = playersCount;
         }
 

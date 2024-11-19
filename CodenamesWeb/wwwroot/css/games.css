@@ -120,23 +120,12 @@
     grid-template-rows: 1fr 1fr;
 }
 
-/*don't delete*/
-.game-setting {
-    display: flex;
-    flex-direction: column;
-}
-
-/*don't delete*/
 .setting-name-text {
-    text-transform: uppercase;
-    font-style: italic;
     font-size: 1.6vw;
 }
 
-/*don't delete*/
 .setting-value-text {
     color: var(--yellow-color);
-    font-style: italic;
     font-weight: 200;
     font-size: 0.8vw;
 }
