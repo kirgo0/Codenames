@@ -75,9 +75,9 @@
 }
 
 .team-card {
-    max-height: calc(100vh - var(--main-vpad)*2 - var(--default-gap) - 40vh);
-    aspect-ratio: 1 / 1.6;
     flex: 1;
+    max-width: calc((100% - var(--default-gap) * 3)/4);
+    aspect-ratio: 1 / 1.6;
     box-sizing: border-box;
     background-color: rgba(var(--dark-color-t), 0.5);
     border-radius: 2px;

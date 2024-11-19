@@ -1,17 +1,11 @@
 ﻿@*ready to clear*@
-<div class="d-flex align-items-center gamemode-circle-layout" @onclick="ChangeCount">
+<div class="d-flex align-items-center gamemode-circle-layout">
     @*ready to clear*@
-    <div class="w-100 d-flex ratio ratio-1x1 align-items-centerjustify-content-center user-select-none rounded-circle gamemode-circle gamemode-@TeamsCount-players ibm-plex-mono-bold">
+    <div class="w-100 d-flex ratio ratio-1x1 align-items-centerjustify-content-center user-select-none rounded-circle gamemode-circle gamemode-@LobbyConfigurationDto.TeamCount-players ibm-plex-mono-bold">
     </div>
 </div>
 @code {
-    [Parameter]
-    public int TeamsCount { get; set; } = 3;
+    [CascadingParameter]
+    public LobbyConfigurationDto LobbyConfigurationDto { get; set; }
 
-    public void ChangeCount ()
-    {
-        TeamsCount++;
-        if (TeamsCount > 4) TeamsCount = 2;
-        StateHasChanged();
-    }
 }
