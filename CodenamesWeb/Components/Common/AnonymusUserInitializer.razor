@@ -1,0 +1,24 @@
+﻿@inject UserService UserService
+@inject IJSRuntime JSRuntime
+
+@code {
+    private string? AnonymousId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var fingerprint = await JSRuntime.InvokeAsync<string>("getFingerprint");
+
+        var existingAnonymousId = await JSRuntime.InvokeAsync<string>("getCookie", "AnonymousId");
+
+        if (string.IsNullOrEmpty(existingAnonymousId))
+        {
+            AnonymousId = await UserService.InitializeUserAsync(fingerprint);
+
+            await JSRuntime.InvokeVoidAsync("setCookie", "AnonymousId", AnonymousId, 30);
+        }
+        else
+        {
+            AnonymousId = existingAnonymousId;
+        }
+    }
+}
